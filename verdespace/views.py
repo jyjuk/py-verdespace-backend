@@ -1,3 +1,4 @@
+from drf_spectacular.utils import extend_schema_view, extend_schema
 from rest_framework import viewsets, permissions
 from .models import Plant, Comment, WishList
 from .serializers import (
@@ -7,7 +8,6 @@ from .serializers import (
     WishListSerializer,
 )
 from rest_framework import serializers
-
 
 from .telegram_sender import telegram_sender
 
@@ -65,9 +65,23 @@ class CommentViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user)
 
 
+@extend_schema_view(
+    retrieve=extend_schema(
+        parameters=[
+            {
+                "name": "id",
+                "type": "integer",
+                "required": True,
+                "description": "ID of the wishlist item",
+                "in": "path",
+            }
+        ]
+    )
+)
 class WishListViewSet(viewsets.ModelViewSet):
     serializer_class = WishListSerializer
     permission_classes = [permissions.IsAuthenticated]
+    lookup_field = "id"
 
     def get_queryset(self):
         return WishList.objects.filter(user=self.request.user)
