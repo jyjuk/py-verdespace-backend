@@ -1,55 +1,54 @@
 from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class Plant(models.Model):
     SIZE_CHOICES = [
-        ('Extra Small', 'Extra Small'),
-        ('Small', 'Small'),
-        ('Medium', 'Medium'),
-        ('Large', 'Large'),
-        ('Extra Large', 'Extra Large'),
+        ("Extra Small", "Extra Small"),
+        ("Small", "Small"),
+        ("Medium", "Medium"),
+        ("Large", "Large"),
+        ("Extra Large", "Extra Large"),
     ]
 
     WATER_REQUIREMENT_CHOICES = [
-        ('Very Low', 'Very Low'),
-        ('Low', 'Low'),
-        ('Moderate', 'Moderate'),
-        ('High', 'High'),
-        ('Very High', 'Very High')
+        ("Very Low", "Very Low"),
+        ("Low", "Low"),
+        ("Moderate", "Moderate"),
+        ("High", "High"),
+        ("Very High", "Very High"),
     ]
 
     SUNLIGHT_REQUIREMENT_CHOICES = [
-        ('Indirect light', 'Indirect light'),
-        ('Low to medium', 'Low to medium'),
-        ('Bright, indirect', 'Bright, indirect'),
-        ('Low to bright', 'Low to bright'),
-        ('Bright, direct', 'Bright, direct'),
-        ('Filtered light', 'Filtered light'),
-        ('Full sun', 'Full sun'),
-        ('Full shade', 'Full shade'),
-        ('Medium, indirect', 'Medium, indirect'),
-        ('Bright light with some direct sun', 'Bright light with some direct sun'),
+        ("Indirect light", "Indirect light"),
+        ("Low to medium", "Low to medium"),
+        ("Bright, indirect", "Bright, indirect"),
+        ("Low to bright", "Low to bright"),
+        ("Bright, direct", "Bright, direct"),
+        ("Filtered light", "Filtered light"),
+        ("Full sun", "Full sun"),
+        ("Full shade", "Full shade"),
+        ("Medium, indirect", "Medium, indirect"),
+        ("Bright light with some direct sun", "Bright light with some direct sun"),
     ]
 
     CARE_REQUIREMENT_CHOICES = [
-        ('Easy', 'Easy'),
-        ('Medium', 'Medium'),
-        ('Difficult', 'Difficult'),
+        ("Easy", "Easy"),
+        ("Medium", "Medium"),
+        ("Difficult", "Difficult"),
     ]
 
     CATEGORY_CHOICES = [
-        ('Air-Purifying', 'Air-Purifying'),
-        ('Decorative', 'Decorative'),
-        ('Flowering', 'Flowering'),
-        ('Succulent', 'Succulent'),
-        ('Cactus', 'Cactus'),
-        ('Rare', 'Rare'),
-        ('Edible', 'Edible'),
-        ('Medicinal', 'Medicinal'),
-        ('Climbing', 'Climbing'),
-        ('Ornamental Grass', 'Ornamental Grass'),
+        ("Air-Purifying", "Air-Purifying"),
+        ("Decorative", "Decorative"),
+        ("Flowering", "Flowering"),
+        ("Succulent", "Succulent"),
+        ("Cactus", "Cactus"),
+        ("Rare", "Rare"),
+        ("Edible", "Edible"),
+        ("Medicinal", "Medicinal"),
+        ("Climbing", "Climbing"),
+        ("Ornamental Grass", "Ornamental Grass"),
     ]
 
     name = models.CharField(max_length=100)
@@ -63,7 +62,7 @@ class Plant(models.Model):
     size = models.CharField(max_length=15, choices=SIZE_CHOICES)
     blooms = models.BooleanField(default=False)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    image = models.ImageField(upload_to='plants/', blank=True, null=True)
+    image = models.ImageField(upload_to="plants/", blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -72,11 +71,11 @@ class Plant(models.Model):
 class Comment(models.Model):
     text = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    plant = models.ForeignKey(Plant, related_name='comments', on_delete=models.CASCADE)
+    plant = models.ForeignKey(Plant, related_name="comments", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Comment by {self.author} on {self.plant}'
+        return f"Comment by {self.author} on {self.plant}"
 
 
 class WishList(models.Model):
@@ -86,4 +85,3 @@ class WishList(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s wishlist: {self.plant.name}"
-
