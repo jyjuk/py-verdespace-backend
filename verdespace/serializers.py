@@ -10,10 +10,11 @@ class PlantSummarySerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source="author.username")
+    plant = serializers.PrimaryKeyRelatedField(queryset=Plant.objects.all())
 
     class Meta:
         model = Comment
-        fields = ["id", "text", "author", "created_at"]
+        fields = ["id", "text", "plant", "author", "created_at"]
 
 
 class WishListSerializer(serializers.ModelSerializer):
