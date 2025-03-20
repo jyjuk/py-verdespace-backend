@@ -4,3 +4,4 @@ venv
 .env
 platnsdata.json
 .flake8
+db.sqlite3
