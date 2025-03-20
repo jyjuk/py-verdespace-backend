@@ -1,5 +1,6 @@
 from drf_spectacular.utils import extend_schema_view, extend_schema
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, serializers
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Plant, Comment, WishList
 from .serializers import (
     PlantSummarySerializer,
@@ -7,8 +8,7 @@ from .serializers import (
     CommentSerializer,
     WishListSerializer,
 )
-from rest_framework import serializers
-
+from .filters import PlantFilter
 from .telegram_sender import telegram_sender
 
 
@@ -26,9 +26,22 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
         return obj.author == request.user
 
 
+@extend_schema_view(
+    list=extend_schema(
+        description="Retrieve a summary of all plants"
+    ),
+    retrieve=extend_schema(
+        description="Retrieve detailed information about a specific plant"
+    ),
+    create=extend_schema(
+        description="Create a new plant (only for staff users)"
+    ),
+)
 class PlantViewSet(viewsets.ModelViewSet):
     queryset = Plant.objects.all()
     permission_classes = [permissions.IsAuthenticated, IsAdminOrReadOnly]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = PlantFilter
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -38,12 +51,15 @@ class PlantViewSet(viewsets.ModelViewSet):
     @staticmethod
     def notify_b(plant):
         message = (
-            f"New Plant Created \n"
+            f"New Plant Added \n"
             f"Plant ID: {plant.pk}\n"
             f"Plant Name: {plant.name}\n"
             f"Plant Size: {plant.size}\n"
         )
-        telegram_sender.send_message(message)
+        try:
+            telegram_sender.send_message(message)
+        except Exception as e:
+            print(f"Error sending notification: {e}")
 
     def perform_create(self, serializer):
         plant = serializer.save()
@@ -51,15 +67,18 @@ class PlantViewSet(viewsets.ModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.select_related('author', 'plant')
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticated, IsAuthorOrReadOnly]
 
     def get_queryset(self):
         plant_id = self.request.query_params.get("plant")
+        queryset = self.queryset
         if plant_id:
-            return Comment.objects.filter(plant_id=plant_id)
-        return super().get_queryset()
+            if not plant_id.isdigit():
+                raise serializers.ValidationError("Plant ID must be a valid integer.")
+            return queryset.filter(plant_id=plant_id)
+        return queryset
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -87,7 +106,8 @@ class WishListViewSet(viewsets.ModelViewSet):
         return WishList.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        plant = serializer.validated_data.get("plant")
-        if WishList.objects.filter(user=self.request.user, plant=plant).exists():
+        plant = serializer.validated_data.get("plant_id")
+        wishlist, created = WishList.objects.get_or_create(user=self.request.user, plant=plant)
+        if not created:
             raise serializers.ValidationError("This plant is already in your wishlist.")
-        serializer.save(user=self.request.user)
+        return wishlist
