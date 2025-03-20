@@ -41,24 +41,25 @@ class UserSerializerTests(TestCase):
         data = {
             "email": "valid@example.com",  # Дійсний email
             "password": "1234",  # Некоректний пароль (надто короткий)
-            "username": "newuser"
+            "username": "newuser",
         }
         serializer = UserSerializer(data=data)
         self.assertFalse(serializer.is_valid())
-        self.assertIn("password", serializer.errors)  # Очікуємо помилку для поля password
+        self.assertIn(
+            "password", serializer.errors
+        )  # Очікуємо помилку для поля password
 
     def test_jwt_authorization(self):
         user = get_user_model().objects.create_user(
-            email="jwtuser@example.com",
-            password="testpass123"
+            email="jwtuser@example.com", password="testpass123"
         )
         client = APIClient()
 
         # Отримуємо токен
-        token_response = client.post('/api/user/token/', {
-            "email": "jwtuser@example.com",
-            "password": "testpass123"
-        })
+        token_response = client.post(
+            "/api/user/token/",
+            {"email": "jwtuser@example.com", "password": "testpass123"},
+        )
         self.assertEqual(token_response.status_code, 200)
 
         access_token = token_response.data.get("access")
@@ -67,6 +68,6 @@ class UserSerializerTests(TestCase):
 
         # Використовуємо токен
         client.credentials(HTTP_AUTHORIZATION=f"Bearer {access_token}")
-        response = client.get('/api/user/me/')
+        response = client.get("/api/user/me/")
         print(f"Response: {response.data}")  # Додати для налагодження
         self.assertEqual(response.status_code, 200)
