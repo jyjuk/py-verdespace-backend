@@ -1,0 +1,1702 @@
+[
+    {
+        "model": "verdespace.plant",
+        "pk": 1,
+        "fields": {
+            "name": "Spider Plant",
+            "description": "Easy-to-grow plant with arching leaves and small offshoots.",
+            "tips": "Keep soil slightly moist; avoid cold drafts.",
+            "light_needs": "Indirect light",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 2,
+        "fields": {
+            "name": "Peace Lily",
+            "description": "Beautiful flowering plant with glossy leaves.",
+            "tips": "Keep out of direct sun; water weekly.",
+            "light_needs": "Low to medium",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 3,
+        "fields": {
+            "name": "Aloe Vera",
+            "description": "Succulent with medicinal gel-filled leaves.",
+            "tips": "Allow soil to dry completely; avoid overwatering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 4,
+        "fields": {
+            "name": "Fiddle Leaf Fig",
+            "description": "Large leaves, adds a bold touch to any space.",
+            "tips": "Needs consistency; avoid drafty spots.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 5,
+        "fields": {
+            "name": "Jade Plant",
+            "description": "Thick, round leaves, also known as the 'money tree.'",
+            "tips": "Thrives on neglect; don’t overwater.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 6,
+        "fields": {
+            "name": "Monstera Deliciosa",
+            "description": "Iconic plant with split leaves, also called the Swiss Cheese Plant.",
+            "tips": "Water when topsoil is dry; prefers humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 7,
+        "fields": {
+            "name": "Rubber Plant",
+            "description": "Sturdy plant with thick, glossy leaves.",
+            "tips": "Keep soil moist in summer; reduce watering in winter.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 8,
+        "fields": {
+            "name": "Snake Plant",
+            "description": "Known for tall, sword-like leaves and low maintenance.",
+            "tips": "Allow soil to dry between waterings; avoid overwatering.",
+            "light_needs": "Low to bright",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 9,
+        "fields": {
+            "name": "Calathea Orbifolia",
+            "description": "Gorgeous plant with wide, striped leaves.",
+            "tips": "Keep in a humid spot; avoid direct sunlight.",
+            "light_needs": "Low to medium",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Rare"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 10,
+        "fields": {
+            "name": "Anthurium",
+            "description": "Brightly colored flowers with glossy leaves.",
+            "tips": "Keep soil moist but not soggy; needs warmth.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 11,
+        "fields": {
+            "name": "ZZ Plant",
+            "description": "Hardy plant with shiny, dark green leaves.",
+            "tips": "Thrives on neglect; water sparingly.",
+            "light_needs": "Low to bright",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 12,
+        "fields": {
+            "name": "Boston Fern",
+            "description": "Lush, arching fronds; great for hanging baskets.",
+            "tips": "Requires consistent moisture and humidity.",
+            "light_needs": "Indirect light",
+            "water_needs": "High",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 13,
+        "fields": {
+            "name": "Cactus (Golden Barrel)",
+            "description": "Iconic round cactus with yellow spines.",
+            "tips": "Prefers dry conditions; water sparingly.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Cactus"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 14,
+        "fields": {
+            "name": "Pothos",
+            "description": "Versatile vine plant, easy to grow.",
+            "tips": "Let soil dry out between waterings.",
+            "light_needs": "Low to bright",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 15,
+        "fields": {
+            "name": "Orchid",
+            "description": "Elegant flowers in various colors; a classic beauty.",
+            "tips": "Needs indirect sunlight and orchid-specific fertilizer.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 16,
+        "fields": {
+            "name": "Croton",
+            "description": "Colorful foliage with vibrant shades of red, yellow, and green.",
+            "tips": "Avoid sudden temperature changes; keep soil moist but not soggy.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 17,
+        "fields": {
+            "name": "Philodendron",
+            "description": "Heart-shaped leaves, great for indoor spaces.",
+            "tips": "Let the topsoil dry out before watering again.",
+            "light_needs": "Low to medium",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 18,
+        "fields": {
+            "name": "Dieffenbachia",
+            "description": "Also known as Dumb Cane, with striking patterned leaves.",
+            "tips": "Avoid placing in direct sunlight; keep soil consistently moist.",
+            "light_needs": "Medium to low",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 19,
+        "fields": {
+            "name": "Ponytail Palm",
+            "description": "Quirky plant with a bulb-like trunk and long, flowing leaves.",
+            "tips": "Prefers dry conditions; water sparingly.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 20,
+        "fields": {
+            "name": "Bird of Paradise",
+            "description": "Bold plant with large, tropical leaves and striking flowers.",
+            "tips": "Keep soil consistently moist; needs high humidity.",
+            "light_needs": "Bright, direct",
+            "water_needs": "High",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 21,
+        "fields": {
+            "name": "Haworthia",
+            "description": "Compact succulent with spiky, striped leaves.",
+            "tips": "Water only when soil is completely dry.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 22,
+        "fields": {
+            "name": "Echeveria",
+            "description": "Rosette-shaped succulent with a variety of colors.",
+            "tips": "Needs well-drained soil and lots of sunlight.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 23,
+        "fields": {
+            "name": "Bamboo Palm",
+            "description": "Air-purifying plant with tall, slender stems and feathery leaves.",
+            "tips": "Keep soil evenly moist and ensure good humidity.",
+            "light_needs": "Medium to bright",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 24,
+        "fields": {
+            "name": "Parlor Palm",
+            "description": "Compact palm with delicate, arching fronds.",
+            "tips": "Prefers consistently moist soil; avoid overwatering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 25,
+        "fields": {
+            "name": "Pilea Peperomioides",
+            "description": "Also known as the Chinese Money Plant, with round, coin-shaped leaves.",
+            "tips": "Allow topsoil to dry out between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 26,
+        "fields": {
+            "name": "Aglaonema",
+            "description": "Attractive, variegated leaves; tolerant of low light.",
+            "tips": "Water when the topsoil is dry; avoid cold drafts.",
+            "light_needs": "Low to medium",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 27,
+        "fields": {
+            "name": "String of Pearls",
+            "description": "Unique succulent with trailing, bead-like leaves.",
+            "tips": "Water sparingly; avoid overwatering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 28,
+        "fields": {
+            "name": "Begonia Rex",
+            "description": "Vibrant foliage with striking patterns and textures.",
+            "tips": "Keep soil moist but not soggy; prefers high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Small",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 29,
+        "fields": {
+            "name": "Cast Iron Plant",
+            "description": "Extremely hardy plant with dark green leaves.",
+            "tips": "Water sparingly; let soil dry out between waterings.",
+            "light_needs": "Low to medium",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 30,
+        "fields": {
+            "name": "Peperomia",
+            "description": "Compact plant with thick, textured leaves in various colors.",
+            "tips": "Allow the topsoil to dry out between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 31,
+        "fields": {
+            "name": "Jade Vine",
+            "description": "Exotic climbing plant with cascading, turquoise flowers.",
+            "tips": "Needs consistent watering and high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 32,
+        "fields": {
+            "name": "Hoya (Wax Plant)",
+            "description": "Glossy, waxy leaves and star-shaped flowers.",
+            "tips": "Allow soil to dry out between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 33,
+        "fields": {
+            "name": "Golden Pothos",
+            "description": "Popular trailing plant with variegated leaves.",
+            "tips": "Tolerates neglect; water when soil is dry.",
+            "light_needs": "Low to bright",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 34,
+        "fields": {
+            "name": "Mimosa Pudica (Sensitive Plant)",
+            "description": "Touch-sensitive plant that folds its leaves when touched.",
+            "tips": "Keep soil consistently moist and provide good drainage.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Rare"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 35,
+        "fields": {
+            "name": "Ficus Benjamina (Weeping Fig)",
+            "description": "Graceful tree with slender branches and glossy leaves.",
+            "tips": "Water when the topsoil is dry; avoid overwatering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 36,
+        "fields": {
+            "name": "Crown of Thorns",
+            "description": "Thorny succulent with vibrant flowers.",
+            "tips": "Allow soil to dry out between waterings.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 37,
+        "fields": {
+            "name": "Nerve Plant",
+            "description": "Striking plant with vein-patterned leaves in various colors.",
+            "tips": "Keep soil moist and provide high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 38,
+        "fields": {
+            "name": "Alocasia (Elephant Ear)",
+            "description": "Dramatic foliage with large, arrow-shaped leaves.",
+            "tips": "Water consistently; prefers high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Large",
+            "blooms": false,
+            "category": "Rare"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 39,
+        "fields": {
+            "name": "Oxalis Triangularis",
+            "description": "Unique plant with triangular purple leaves.",
+            "tips": "Allow soil to dry slightly before watering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 40,
+        "fields": {
+            "name": "Flamingo Flower (Anthurium)",
+            "description": "Eye-catching flowers with glossy foliage.",
+            "tips": "Keep soil consistently moist and provide warmth.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 41,
+        "fields": {
+            "name": "Lithops (Living Stones)",
+            "description": "Small succulents resembling stones.",
+            "tips": "Avoid overwatering; let soil dry out completely.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 42,
+        "fields": {
+            "name": "Caladium",
+            "description": "Vibrant plant with colorful, heart-shaped leaves.",
+            "tips": "Needs consistent moisture and indirect light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 43,
+        "fields": {
+            "name": "Air Plant (Tillandsia)",
+            "description": "Unique plant that doesn’t require soil.",
+            "tips": "Mist regularly and provide good air circulation.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Rare"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 44,
+        "fields": {
+            "name": "Baby Tears",
+            "description": "Dense, mat-forming plant with tiny leaves.",
+            "tips": "Keep soil moist and provide high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "High",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 45,
+        "fields": {
+            "name": "Zebra Plant (Aphelandra)",
+            "description": "Stunning striped leaves with yellow flower bracts.",
+            "tips": "Keep soil moist and provide high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 46,
+        "fields": {
+            "name": "Angel Wing Begonia",
+            "description": "Unique, wing-shaped leaves with clusters of flowers.",
+            "tips": "Keep soil slightly moist; avoid direct sunlight.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 47,
+        "fields": {
+            "name": "Elephant Bush (Portulacaria Afra)",
+            "description": "Hardy succulent with small, fleshy leaves.",
+            "tips": "Allow soil to dry out between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 48,
+        "fields": {
+            "name": "Purple Heart (Tradescantia Pallida)",
+            "description": "Vibrant purple leaves with delicate flowers.",
+            "tips": "Water when soil is dry; prefers warm temperatures.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 49,
+        "fields": {
+            "name": "String of Bananas",
+            "description": "Trailing succulent with banana-shaped leaves.",
+            "tips": "Water sparingly and ensure good drainage.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 50,
+        "fields": {
+            "name": "Coffee Plant",
+            "description": "Glossy leaves and, potentially, small coffee beans!",
+            "tips": "Keep soil moist and provide indirect sunlight.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 51,
+        "fields": {
+            "name": "Gloxinia",
+            "description": "Bell-shaped flowers in vibrant colors; ideal for indoor spaces.",
+            "tips": "Keep soil consistently moist; avoid wetting the leaves.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 52,
+        "fields": {
+            "name": "Spiderwort (Tradescantia)",
+            "description": "Easy-to-grow plant with colorful, trailing stems.",
+            "tips": "Keep soil slightly moist; tolerates various conditions.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 53,
+        "fields": {
+            "name": "Paperwhite Narcissus",
+            "description": "Fragrant white flowers, great for indoor decoration.",
+            "tips": "Keep soil moist and ensure good drainage.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 54,
+        "fields": {
+            "name": "Ponytail Palm (Beaucarnea Recurvata)",
+            "description": "Distinctive bulb-like trunk with cascading leaves.",
+            "tips": "Allow soil to dry completely before watering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 55,
+        "fields": {
+            "name": "Arrowhead Plant (Syngonium)",
+            "description": "Fast-growing vine with arrow-shaped leaves.",
+            "tips": "Keep soil moist and provide moderate humidity.",
+            "light_needs": "Low to bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 56,
+        "fields": {
+            "name": "Bird’s Nest Fern",
+            "description": "Lush fern with bright green, wavy fronds.",
+            "tips": "Keep soil consistently moist and provide humidity.",
+            "light_needs": "Low to medium, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 57,
+        "fields": {
+            "name": "Marble Queen Pothos",
+            "description": "Variegated version of pothos with creamy white leaves.",
+            "tips": "Let soil dry out between waterings.",
+            "light_needs": "Low to bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 58,
+        "fields": {
+            "name": "Fernwood Snake Plant",
+            "description": "Compact snake plant with cylindrical leaves.",
+            "tips": "Water sparingly; thrives in neglect.",
+            "light_needs": "Low to bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 59,
+        "fields": {
+            "name": "Lucky Bamboo",
+            "description": "Elegant stalks often grown in water; symbolizes luck.",
+            "tips": "Change water weekly or keep soil slightly moist.",
+            "light_needs": "Low to bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 60,
+        "fields": {
+            "name": "Christmas Cactus",
+            "description": "Festive cactus with bright blooms during the winter.",
+            "tips": "Allow soil to dry slightly between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 61,
+        "fields": {
+            "name": "Boston Sword Fern",
+            "description": "Classic fern with arching fronds, perfect for hanging baskets.",
+            "tips": "Keep soil consistently moist and provide humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "High",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 62,
+        "fields": {
+            "name": "Euphorbia Tirucalli (Pencil Cactus)",
+            "description": "Succulent with thin, pencil-like stems.",
+            "tips": "Water sparingly and provide bright light.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Large",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 63,
+        "fields": {
+            "name": "Bleeding Heart Vine",
+            "description": "Striking vine with heart-shaped flowers.",
+            "tips": "Provide consistent moisture and bright light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 64,
+        "fields": {
+            "name": "Rubber Bush",
+            "description": "Hardy plant with dark, glossy leaves.",
+            "tips": "Water when the topsoil is dry; avoid overwatering.",
+            "light_needs": "Medium to bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 65,
+        "fields": {
+            "name": "Asparagus Fern",
+            "description": "Delicate, feathery foliage, adds a soft touch to any room.",
+            "tips": "Keep soil consistently moist and provide good humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 66,
+        "fields": {
+            "name": "Silver Satin Pothos",
+            "description": "Stunning vine with silvery, variegated leaves.",
+            "tips": "Allow soil to dry slightly between waterings.",
+            "light_needs": "Low to bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 67,
+        "fields": {
+            "name": "Chocolate Soldier (Kalanchoe Tomentosa)",
+            "description": "Succulent with fuzzy, chocolate-tipped leaves.",
+            "tips": "Water sparingly; prefers well-drained soil.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 68,
+        "fields": {
+            "name": "Heartleaf Philodendron",
+            "description": "Classic vine with heart-shaped leaves, easy to care for.",
+            "tips": "Allow soil to dry between waterings; tolerates low light.",
+            "light_needs": "Low to medium",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Air-Purifying"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 69,
+        "fields": {
+            "name": "Canary Date Palm",
+            "description": "Majestic palm with arching fronds; perfect for bright spaces.",
+            "tips": "Keep soil consistently moist and provide bright light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 70,
+        "fields": {
+            "name": "Velvet Plant",
+            "description": "Soft, velvety leaves with a striking purple hue.",
+            "tips": "Keep soil slightly moist and provide bright light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 71,
+        "fields": {
+            "name": "Ceropegia Woodii (String of Hearts)",
+            "description": "Trailing vine with heart-shaped leaves, perfect for hanging baskets.",
+            "tips": "Water sparingly; prefers well-drained soil.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 72,
+        "fields": {
+            "name": "Arabian Jasmine",
+            "description": "Fragrant white flowers; great for indoor or outdoor cultivation.",
+            "tips": "Keep soil consistently moist and provide bright light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 73,
+        "fields": {
+            "name": "Panda Plant (Kalanchoe)",
+            "description": "Succulent with fuzzy, silver-green leaves tipped in brown.",
+            "tips": "Allow soil to dry between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 74,
+        "fields": {
+            "name": "Burgundy Rubber Plant",
+            "description": "Deep burgundy leaves that add drama to any space.",
+            "tips": "Allow soil to dry slightly between waterings.",
+            "light_needs": "Medium to bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 75,
+        "fields": {
+            "name": "Jade Butterfly",
+            "description": "Succulent with compact, rounded leaves resembling butterfly wings.",
+            "tips": "Water sparingly and provide well-drained soil.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 76,
+        "fields": {
+            "name": "Golden Cane Palm",
+            "description": "Elegant palm with golden stems and feathery fronds.",
+            "tips": "Keep soil evenly moist; prefers bright light and humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 77,
+        "fields": {
+            "name": "Angel’s Trumpet",
+            "description": "Stunning plant with large, trumpet-shaped flowers.",
+            "tips": "Keep soil consistently moist; needs bright light to flower.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": true,
+            "size": "Large",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 78,
+        "fields": {
+            "name": "Spiral Aloe",
+            "description": "Unique aloe with symmetrical, spiraling leaves.",
+            "tips": "Allow soil to dry between waterings and provide good drainage.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 79,
+        "fields": {
+            "name": "Peace Lily Domino",
+            "description": "Variegated version of the Peace Lily with patterned leaves.",
+            "tips": "Keep soil moist but not waterlogged; thrives in low light.",
+            "light_needs": "Low to medium",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 80,
+        "fields": {
+            "name": "Moon Cactus",
+            "description": "Small, colorful cactus often grafted onto a green base.",
+            "tips": "Water sparingly and ensure good drainage.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Cactus"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 81,
+        "fields": {
+            "name": "Rattlesnake Plant",
+            "description": "Decorative plant with long, wavy, patterned leaves.",
+            "tips": "Keep soil consistently moist and maintain humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 82,
+        "fields": {
+            "name": "Pitcher Plant",
+            "description": "Carnivorous plant with tubular leaves that trap insects.",
+            "tips": "Use distilled water and maintain high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "High",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Rare"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 83,
+        "fields": {
+            "name": "Bush Lily (Clivia)",
+            "description": "Elegant plant with dark green leaves and bright orange flowers.",
+            "tips": "Allow soil to dry between waterings; prefers indirect light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 84,
+        "fields": {
+            "name": "String of Turtles",
+            "description": "Unique trailing plant with round, turtle-shell patterned leaves.",
+            "tips": "Water sparingly and provide good drainage.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Succulent"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 85,
+        "fields": {
+            "name": "Flame Violet",
+            "description": "Compact plant with velvety leaves and bright flowers.",
+            "tips": "Keep soil consistently moist; prefers high humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 86,
+        "fields": {
+            "name": "White Bird of Paradise",
+            "description": "Bold plant with large leaves and white flowers.",
+            "tips": "Keep soil moist and provide bright light.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 87,
+        "fields": {
+            "name": "Baby Rubber Plant",
+            "description": "Compact plant with thick, glossy green leaves.",
+            "tips": "Allow soil to dry slightly between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 88,
+        "fields": {
+            "name": "Coral Cactus",
+            "description": "Unique cactus with coral-like shapes and bright tips.",
+            "tips": "Water sparingly; avoid overwatering.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Cactus"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 89,
+        "fields": {
+            "name": "Dancing Lady Orchid",
+            "description": "Delicate orchid with yellow flowers resembling dancing figures.",
+            "tips": "Water weekly and maintain humidity.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 90,
+        "fields": {
+            "name": "Blue Star Fern",
+            "description": "Unique fern with bluish-green foliage.",
+            "tips": "Keep soil moist and ensure high humidity.",
+            "light_needs": "Low to medium, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 91,
+        "fields": {
+            "name": "Golden Barrel Cactus",
+            "description": "Iconic round cactus with yellow spines.",
+            "tips": "Water sparingly; thrives in dry conditions.",
+            "light_needs": "Bright, direct",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Cactus"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 92,
+        "fields": {
+            "name": "Banana Tree (Dwarf Cavendish)",
+            "description": "Lush plant with large leaves; grows edible bananas.",
+            "tips": "Keep soil consistently moist and provide bright light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 93,
+        "fields": {
+            "name": "Madagascar Dragon Tree",
+            "description": "Sturdy plant with narrow, spiky leaves.",
+            "tips": "Allow topsoil to dry out between waterings.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 94,
+        "fields": {
+            "name": "Lipstick Plant",
+            "description": "Trailing plant with tubular red flowers resembling lipstick.",
+            "tips": "Keep soil slightly moist and provide good light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 95,
+        "fields": {
+            "name": "Chinese Money Plant (Pilea)",
+            "description": "Adorable plant with pancake-shaped leaves, easy to care for.",
+            "tips": "Allow soil to dry slightly between waterings; prefers indirect light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Easy",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 96,
+        "fields": {
+            "name": "Star Jasmine",
+            "description": "Fragrant vine with small, white star-shaped flowers.",
+            "tips": "Keep soil evenly moist and provide bright light.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 97,
+        "fields": {
+            "name": "Watermelon Peperomia",
+            "description": "Compact plant with striking green leaves resembling watermelon rind.",
+            "tips": "Allow soil to dry slightly between waterings; avoid direct sun.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Low",
+            "care": "Easy",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Small",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 98,
+        "fields": {
+            "name": "Arrow Bamboo",
+            "description": "Slender bamboo variety with tall, straight stalks.",
+            "tips": "Keep soil moist and ensure high humidity.",
+            "light_needs": "Medium to bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": true,
+            "allergenic": false,
+            "size": "Large",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 99,
+        "fields": {
+            "name": "Persian Shield",
+            "description": "Vibrant purple foliage with metallic sheen.",
+            "tips": "Keep soil evenly moist and avoid direct sunlight.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": false,
+            "category": "Decorative"
+        }
+    },
+    {
+        "model": "verdespace.plant",
+        "pk": 100,
+        "fields": {
+            "name": "Golden Shrimp Plant",
+            "description": "Eye-catching plant with yellow, shrimp-like bracts.",
+            "tips": "Keep soil slightly moist; thrives in warm temperatures.",
+            "light_needs": "Bright, indirect",
+            "water_needs": "Moderate",
+            "care": "Medium",
+            "air_purifying": false,
+            "allergenic": false,
+            "size": "Medium",
+            "blooms": true,
+            "category": "Flowering"
+        }
+    }
+]
