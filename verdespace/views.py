@@ -28,20 +28,20 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
 
 @extend_schema_view(
     list=extend_schema(
-        description="Retrieve a summary of all plants"
+        description="Retrieve a summary of all plants with their images"
     ),
     retrieve=extend_schema(
-        description="Retrieve detailed information about a specific plant"
+        description="Retrieve detailed information about a specific plant, including images"
     ),
     create=extend_schema(
         description="Create a new plant (only for staff users)"
     ),
 )
 class PlantViewSet(viewsets.ModelViewSet):
-    queryset = Plant.objects.all()
+    queryset = Plant.objects.prefetch_related("images")
     permission_classes = [permissions.IsAuthenticated, IsAdminOrReadOnly]
-    filter_backends = [DjangoFilterBackend]
-    filterset_class = PlantFilter
+    # filter_backends = [DjangoFilterBackend]
+    # filterset_class = PlantFilter
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -67,18 +67,9 @@ class PlantViewSet(viewsets.ModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.select_related('author', 'plant')
+    queryset = Comment.objects.select_related('author', 'plant', 'parent')
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticated, IsAuthorOrReadOnly]
-
-    def get_queryset(self):
-        plant_id = self.request.query_params.get("plant")
-        queryset = self.queryset
-        if plant_id:
-            if not plant_id.isdigit():
-                raise serializers.ValidationError("Plant ID must be a valid integer.")
-            return queryset.filter(plant_id=plant_id)
-        return queryset
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
