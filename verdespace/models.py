@@ -62,19 +62,32 @@ class Plant(models.Model):
     size = models.CharField(max_length=15, choices=SIZE_CHOICES)
     blooms = models.BooleanField(default=False)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    image = models.ImageField(upload_to="plants/", blank=True, null=True)
 
     def __str__(self):
         return self.name
 
 
+class PlantImage(models.Model):
+    plant = models.ForeignKey(Plant, related_name="images", on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="plants/", blank=True, null=True)
+
+    def __str__(self):
+        return f"Image for {self.plant.name}"
+
+
 class Comment(models.Model):
     text = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    plant = models.ForeignKey(Plant, related_name="comments", on_delete=models.CASCADE)
+    plant = models.ForeignKey("Plant", related_name="comments", on_delete=models.CASCADE)
+    parent = models.ForeignKey(
+        "self", null=True, blank=True, related_name="replies", on_delete=models.CASCADE
+    )
+    image = models.ImageField(upload_to="comments/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+        if self.parent:
+            return f"Reply by {self.author} to {self.parent.author}'s comment"
         return f"Comment by {self.author} on {self.plant}"
 
 
