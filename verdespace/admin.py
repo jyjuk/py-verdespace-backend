@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db.models import Count
 from .models import Plant, Comment, WishList
+from .models import PlantImage
 
 
 @admin.register(Plant)
@@ -51,3 +52,8 @@ class WishListAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         return super().get_queryset(request).select_related("user", "plant")
+
+
+@admin.register(PlantImage)
+class PlantImageAdmin(admin.ModelAdmin):
+    list_display = ["plant", "image"]

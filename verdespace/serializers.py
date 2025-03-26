@@ -3,12 +3,26 @@ from .models import Plant, Comment, WishList, PlantImage
 
 
 class PlantImageSerializer(serializers.ModelSerializer):
+    """
+    Serializer for PlantImage model to handle image data.
+    """
+
     class Meta:
         model = PlantImage
-        fields = ["id", "image"]
+        fields = ["id", "image", "plant", "uploaded_at"]
+
+    def get_image_url(self, obj):
+        """
+        Generate the public URL for the image.
+        """
+        return obj.image.url
 
 
 class PlantSummarySerializer(serializers.ModelSerializer):
+    """
+    Serializer for summarized plant information.
+    """
+
     images = PlantImageSerializer(many=True, read_only=True)
 
     class Meta:
@@ -17,22 +31,45 @@ class PlantSummarySerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Comment model.
+    """
+
     author = serializers.ReadOnlyField(source="author.username")
     plant = serializers.PrimaryKeyRelatedField(queryset=Plant.objects.all())
-    parent = serializers.PrimaryKeyRelatedField(queryset=Comment.objects.all(), required=False, allow_null=True)
+    parent = serializers.PrimaryKeyRelatedField(
+        queryset=Comment.objects.all(), required=False, allow_null=True
+    )
     replies = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
-        fields = ["id", "text", "plant", "author", "parent", "replies", "image", "created_at"]
+        fields = [
+            "id",
+            "text",
+            "plant",
+            "author",
+            "parent",
+            "replies",
+            "image",
+            "created_at",
+        ]
 
     def get_replies(self, obj):
-        if obj.replies.exists():
-            return CommentSerializer(obj.replies.all(), many=True).data
-        return []
+        """
+        Retrieve replies for the current comment.
+        Limit number of replies for performance.
+        """
+        return CommentSerializer(
+            obj.replies.all()[:10], many=True
+        ).data  # Ліміт на 10 відповідей
 
 
 class WishListSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the WishList model.
+    """
+
     user = serializers.ReadOnlyField(source="user.username")
     plant = PlantSummarySerializer(read_only=True)
     plant_id = serializers.PrimaryKeyRelatedField(
@@ -44,6 +81,10 @@ class WishListSerializer(serializers.ModelSerializer):
         fields = ["id", "user", "plant", "plant_id", "created_at"]
 
     def create(self, validated_data):
+        """
+        Create a new WishList entry.
+        Ensure the plant isn't already in the wishlist.
+        """
         plant = validated_data.pop("plant_id")
         user = self.context["request"].user
         if WishList.objects.filter(user=user, plant=plant).exists():
@@ -52,9 +93,29 @@ class WishListSerializer(serializers.ModelSerializer):
 
 
 class PlantDetailSerializer(serializers.ModelSerializer):
+    """
+    Detailed serializer for the Plant model.
+    """
+
     images = PlantImageSerializer(many=True, read_only=True)
     comments = CommentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Plant
-        fields = "__all__"
+        fields = [
+            "id",
+            "name",
+            "description",
+            "tips",  # Додано поле "tips", якщо воно потрібне
+            "size",
+            "light_needs",
+            "water_needs",
+            "care",
+            "air_purifying",
+            "allergenic",
+            "blooms",
+            "category",
+            "images",
+            "comments",
+            "created_at",
+        ]
