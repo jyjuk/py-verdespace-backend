@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+import uuid
 
 
 class Plant(models.Model):
@@ -62,14 +63,27 @@ class Plant(models.Model):
     size = models.CharField(max_length=15, choices=SIZE_CHOICES)
     blooms = models.BooleanField(default=False)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
 
+def unique_image_name(instance, filename):
+    """
+    Генерує унікальну назву для зображення.
+    """
+    extension = filename.split(".")[-1]
+    unique_filename = f"{uuid.uuid4().hex}.{extension}"
+    return f"plants/{unique_filename}"
+
+
 class PlantImage(models.Model):
-    plant = models.ForeignKey(Plant, related_name="images", on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="plants/", blank=True, null=True)
+    plant = models.ForeignKey("Plant", related_name="images", on_delete=models.CASCADE)
+    image = models.ImageField(
+        upload_to=unique_image_name
+    )
+    uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Image for {self.plant.name}"
@@ -78,7 +92,9 @@ class PlantImage(models.Model):
 class Comment(models.Model):
     text = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    plant = models.ForeignKey("Plant", related_name="comments", on_delete=models.CASCADE)
+    plant = models.ForeignKey(
+        "Plant", related_name="comments", on_delete=models.CASCADE
+    )
     parent = models.ForeignKey(
         "self", null=True, blank=True, related_name="replies", on_delete=models.CASCADE
     )
@@ -93,7 +109,9 @@ class Comment(models.Model):
 
 class WishList(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    plant = models.ForeignKey(Plant, related_name="wishlists", on_delete=models.CASCADE, null=True, blank=True)
+    plant = models.ForeignKey(
+        Plant, related_name="wishlists", on_delete=models.CASCADE, null=True, blank=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

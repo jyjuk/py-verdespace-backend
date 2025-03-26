@@ -9,14 +9,10 @@ User = get_user_model()
 class PlantViewSetTest(APITestCase):
     def setUp(self):
         self.superuser = User.objects.create_superuser(
-            username="admin",
-            email="admin@example.com",
-            password="password123"
+            username="admin", email="admin@example.com", password="password123"
         )
         self.user = User.objects.create_user(
-            username="testuser",
-            email="testuser@example.com",
-            password="password123"
+            username="testuser", email="testuser@example.com", password="password123"
         )
         self.plant = Plant.objects.create(
             name="Spider Plant",
@@ -55,7 +51,7 @@ class PlantViewSetTest(APITestCase):
             "allergenic": True,
             "size": "Medium",
             "blooms": True,
-            "category": "Flowering"
+            "category": "Flowering",
         }
         response = self.client.post("/api/verdespace/plants/", data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -74,7 +70,7 @@ class PlantViewSetTest(APITestCase):
             "allergenic": False,
             "size": "Small",
             "blooms": False,
-            "category": "Decorative"
+            "category": "Decorative",
         }
         response = self.client.post("/api/verdespace/plants/", data)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
@@ -83,9 +79,7 @@ class PlantViewSetTest(APITestCase):
 class CommentViewSetTest(APITestCase):
     def setUp(self):
         self.user = User.objects.create_user(
-            username="testuser",
-            email="testuser@example.com",
-            password="password123"
+            username="testuser", email="testuser@example.com", password="password123"
         )
         self.plant = Plant.objects.create(
             name="Cactus",
@@ -114,7 +108,10 @@ class CommentViewSetTest(APITestCase):
 
     def test_create_comment_as_authenticated_user(self):
         self.client.force_authenticate(user=self.user)
-        data = {"text": "Another comment", "plant": self.plant.id}  # Передаємо поле "plant"
+        data = {
+            "text": "Another comment",
+            "plant": self.plant.id,
+        }  # Передаємо поле "plant"
         response = self.client.post("/api/verdespace/comments/", data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Comment.objects.count(), 2)
@@ -128,9 +125,7 @@ class CommentViewSetTest(APITestCase):
 class WishListViewSetTest(APITestCase):
     def setUp(self):
         self.user = User.objects.create_user(
-            username="testuser",
-            email="testuser@example.com",
-            password="password123"
+            username="testuser", email="testuser@example.com", password="password123"
         )
         self.plant = Plant.objects.create(
             name="Aloe Vera",

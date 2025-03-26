@@ -14,14 +14,12 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Load environment variables
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
@@ -29,24 +27,25 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1")
 
-
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
+# AWS S3 CONFIGURATION
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_REGION_NAME = os.getenv("AWS_S3_REGION_NAME")
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
-CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
-
-MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+
+AWS_QUERYSTRING_AUTH = False  # Turn off signed URLs if not needed for public files
+
+# Add static files configuration for DEBUG
 if DEBUG:
     STATICFILES_DIRS = [BASE_DIR / "static"]
-# Application definition
 
+# Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -60,6 +59,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "verdespace",
     "corsheaders",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -71,9 +71,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "verdespace.middleware.RemoveAuthorizationHeaderMiddleware",
 ]
 
-ROOT_URLCONF = "py_verdespace_backend.urls"
+ROOT_URLCONF = "py_verdespace_backend.urls"  # Ensure this is correctly set
 
 TEMPLATES = [
     {
@@ -93,9 +94,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "py_verdespace_backend.wsgi.application"
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+# Database configuration
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -104,8 +103,6 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -121,11 +118,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Custom user model
 AUTH_USER_MODEL = "users.User"
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
+# Localization
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -134,17 +130,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+# Static and media configuration
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+MEDIA_ROOT = BASE_DIR / "media"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+# Django REST Framework settings
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -152,6 +143,7 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
+# Spectacular settings for API documentation
 SPECTACULAR_SETTINGS = {
     "TITLE": "Verde Space API",
     "DESCRIPTION": "Verde Space API Backend",
@@ -165,9 +157,16 @@ SPECTACULAR_SETTINGS = {
     },
 }
 
+# Simple JWT settings
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=45),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
 }
+
+# CORS configuration
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
