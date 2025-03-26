@@ -33,9 +33,7 @@ class PlantModelTest(TestCase):
 class CommentModelTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(
-            username="testuser",
-            email="testuser@example.com",
-            password="password"
+            username="testuser", email="testuser@example.com", password="password"
         )
         self.plant = Plant.objects.create(
             name="Aloe Vera",
@@ -65,9 +63,7 @@ class CommentModelTest(TestCase):
 class WishListModelTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(
-            username="testuser",
-            email="testuser@example.com",
-            password="password"
+            username="testuser", email="testuser@example.com", password="password"
         )
         self.plant = Plant.objects.create(
             name="Cactus",
