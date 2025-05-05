@@ -1371,7 +1371,7 @@
         "model": "verdespace.plant",
         "pk": 77,
         "fields": {
-            "name": "Angel\u0432\u0402\u2122s Trumpet",
+            "name": "Angels Trumpet",
             "description": "Stunning plant with large, trumpet-shaped flowers.",
             "tips": "Keep soil consistently moist; needs bright light to flower.",
             "light_needs": "Bright, direct",
