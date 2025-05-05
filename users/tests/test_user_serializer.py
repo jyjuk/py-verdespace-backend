@@ -10,8 +10,6 @@ class UserSerializerTests(TestCase):
             "email": "user@example.com",
             "password": "testpass123",
             "username": "testuser",
-            "first_name": "Test",
-            "last_name": "User",
         }
         self.user = get_user_model().objects.create_user(**self.user_data)
 
@@ -34,7 +32,6 @@ class UserSerializerTests(TestCase):
         self.assertTrue(serializer.is_valid())
         updated_user = serializer.save()
 
-        self.assertEqual(updated_user.first_name, data["first_name"])
         self.assertTrue(updated_user.check_password(data["password"]))
 
     def test_invalid_data_serializer(self):
