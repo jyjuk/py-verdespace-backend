@@ -24,10 +24,14 @@ class PlantSummarySerializer(serializers.ModelSerializer):
     """
 
     images = PlantImageSerializer(many=True, read_only=True)
+    average_rating = serializers.SerializerMethodField()
 
     class Meta:
         model = Plant
-        fields = ["id", "name", "images", "description"]
+        fields = ["id", "name", "images", "description", "average_rating"]
+
+    def get_average_rating(self, obj):
+        return obj.average_rating()
 
 
 class CommentSerializer(serializers.ModelSerializer):
