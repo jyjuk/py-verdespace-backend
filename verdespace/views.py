@@ -2,13 +2,13 @@ from drf_spectacular.utils import extend_schema_view, extend_schema
 from rest_framework import viewsets, permissions, status, serializers
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from .models import Plant, Comment, WishList, PlantImage
+from .models import Plant, Comment, WishList, PlantImage, Rating
 from .serializers import (
     PlantSummarySerializer,
     PlantDetailSerializer,
     CommentSerializer,
     WishListSerializer,
-    PlantImageSerializer,
+    PlantImageSerializer, RatingSerializer,
 )
 from .telegram_sender import telegram_sender
 from .utils import generate_presigned_url
@@ -222,3 +222,8 @@ class PlantImageViewSet(viewsets.ModelViewSet):
         Save a new image for a plant.
         """
         serializer.save()
+
+
+class RatingViewSet(viewsets.ModelViewSet):
+    queryset = Rating.objects.all()
+    serializer_class = RatingSerializer
