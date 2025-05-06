@@ -17,10 +17,9 @@ from pathlib import Path
 # Load environment variables
 from dotenv import load_dotenv
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-load_dotenv()
-
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -190,8 +189,8 @@ LOGIN_REDIRECT_URL = "/"
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
         "APP": {
-            "client_id": "813800292476-fue049l6l3067cjmirakkhtk0r5rkiru.apps.googleusercontent.com",
-            "secret": "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",
+            "client_id": os.getenv("GOOGLE_CLIENT_ID"),
+            "secret": os.getenv("GOOGLE_SECRET"),
             "key": ""
         }
     }

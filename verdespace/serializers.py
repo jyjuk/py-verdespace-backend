@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Plant, Comment, WishList, PlantImage
+from .models import Plant, Comment, WishList, PlantImage, Rating
 
 
 class PlantImageSerializer(serializers.ModelSerializer):
@@ -99,6 +99,7 @@ class PlantDetailSerializer(serializers.ModelSerializer):
 
     images = PlantImageSerializer(many=True, read_only=True)
     comments = CommentSerializer(many=True, read_only=True)
+    average_rating = serializers.SerializerMethodField()
 
     class Meta:
         model = Plant
@@ -118,4 +119,14 @@ class PlantDetailSerializer(serializers.ModelSerializer):
             "images",
             "comments",
             "created_at",
+            "average_rating",
         ]
+
+    def get_average_rating(self, obj):
+        return obj.average_rating()
+
+
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = ['plant', 'user', 'rating']
