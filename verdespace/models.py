@@ -65,6 +65,10 @@ class Plant(models.Model):
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
+    def average_rating(self):
+        ratings = self.ratings.all()
+        return round(sum(r.rating for r in ratings) / len(ratings), 2) if ratings else None
+
     def __str__(self):
         return self.name
 
@@ -116,3 +120,15 @@ class WishList(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s wishlist: {self.plant.name if self.plant else 'No plant specified'}"
+
+
+class Rating(models.Model):
+    plant = models.ForeignKey(Plant, related_name="ratings", on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=[(i, str(i)) for i in range(1, 6)])
+
+    class Meta:
+        unique_together = ('plant', 'user')  # Кожен користувач може оцінити рослину лише один раз
+
+    def __str__(self):
+        return f"Rating {self.rating} by {self.user} for {self.plant}"
