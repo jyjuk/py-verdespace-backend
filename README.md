@@ -19,6 +19,8 @@
 
 ## Wishlists: Track favorite plants with validation to prevent duplicate entries.
 
+## Plant Rating System: Users can rate plants, and the system calculates the average rating automatically.
+
 ## Custom Features
 
     Image Upload: Attach multiple images to plants.
@@ -92,7 +94,7 @@
     (Optional) Import fixtures:
 
     ```bash
-    python manage.py loaddata plantsdata_cleaned.json
+    python manage.py loaddata plantsdata_cleaned_updated.json
     ```
 
     5. Create Superuser

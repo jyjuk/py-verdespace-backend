@@ -5,32 +5,21 @@ import uuid
 
 class Plant(models.Model):
     SIZE_CHOICES = [
-        ("Extra Small", "Extra Small"),
         ("Small", "Small"),
         ("Medium", "Medium"),
         ("Large", "Large"),
-        ("Extra Large", "Extra Large"),
     ]
 
     WATER_REQUIREMENT_CHOICES = [
-        ("Very Low", "Very Low"),
-        ("Low", "Low"),
-        ("Moderate", "Moderate"),
-        ("High", "High"),
-        ("Very High", "Very High"),
+        ("Rarely", "Rarely"),
+        ("Moderately", "Moderately"),
+        ("Often", "Often"),
     ]
 
     SUNLIGHT_REQUIREMENT_CHOICES = [
-        ("Indirect light", "Indirect light"),
-        ("Low to medium", "Low to medium"),
-        ("Bright, indirect", "Bright, indirect"),
-        ("Low to bright", "Low to bright"),
-        ("Bright, direct", "Bright, direct"),
-        ("Filtered light", "Filtered light"),
-        ("Full sun", "Full sun"),
-        ("Full shade", "Full shade"),
-        ("Medium, indirect", "Medium, indirect"),
-        ("Bright light with some direct sun", "Bright light with some direct sun"),
+        ("Bright", "Bright"),
+        ("Scattered", "Scattered"),
+        ("Shadow", "Shadow"),
     ]
 
     CARE_REQUIREMENT_CHOICES = [
@@ -55,12 +44,12 @@ class Plant(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     tips = models.TextField()
-    light_needs = models.CharField(max_length=35, choices=SUNLIGHT_REQUIREMENT_CHOICES)
-    water_needs = models.CharField(max_length=10, choices=WATER_REQUIREMENT_CHOICES)
+    light_needs = models.CharField(max_length=10, choices=SUNLIGHT_REQUIREMENT_CHOICES)
+    water_needs = models.CharField(max_length=15, choices=WATER_REQUIREMENT_CHOICES)
     care = models.CharField(max_length=10, choices=CARE_REQUIREMENT_CHOICES)
     air_purifying = models.BooleanField(default=False)
     allergenic = models.BooleanField(default=False)
-    size = models.CharField(max_length=15, choices=SIZE_CHOICES)
+    size = models.CharField(max_length=10, choices=SIZE_CHOICES)
     blooms = models.BooleanField(default=False)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
